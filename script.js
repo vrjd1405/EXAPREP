@@ -1,117 +1,126 @@
 // ------- Configuration -------
 
+// JEE/VITEEE physics‑style tutor sections
 const SECTION_ORDER = [
   "FOUNDATION (Basics)",
   "CORE CONCEPTS",
-  "ADVANCED LEVEL",
-  "EXTRA EDGE CONCEPTS",
-  "INTUITION",
-  "COMMON MISTAKES",
-  "SHORTCUTS & TRICKS",
-  "IMPORTANT TOPICS",
-  "QUESTION PATTERNS",
-  "PRACTICE QUESTIONS",
-  "FINAL FORMULA SUMMARY"
+  "FORMULAS",
+  "EXAM LEVEL",
+  "FINAL SUMMARY"
 ];
 
-// Simple simulated AI template.
-// You can later replace `buildSimulatedResponse` with a real API call.
+// Simulated AI template following your teaching style.
+// Later you can replace `buildSimulatedResponse` with a real API call.
 function buildSimulatedResponse(topicRaw) {
   const topic = topicRaw.trim() || "Selected Topic";
 
   return {
     "FOUNDATION (Basics)": `
-Define what "${topic}" actually represents in the syllabus and in real life.
-List key terms and symbols you will repeatedly use when dealing with this topic.
-Clarify all units, dimensions and basic notations (for example, vector vs scalar form).
-Connect it with the prerequisite chapters so that the learner recalls earlier ideas first.
-Make sure the student can state the textbook definition of "${topic}" in a precise, exam-ready way.`.trim(),
+Okay, let's start super basic for "${topic}".
+
+In simple words, this concept tells you **how physics is actually happening in real life**, but in a proper math + logic language. Imagine I'm your favourite physics sir in class, explaining on the board—same vibe here.
+
+Think of one daily life scene where "${topic}" comes naturally. For example, if "${topic}" is related to motion, imagine:
+- You sitting in a car,
+- Speeding up, slowing down, or turning,
+- How you feel a push or pull even though you are just sitting.
+
+In the same way, "${topic}" is just a **clean way of describing what you already experience daily**, but with:
+- proper words,
+- proper units,
+- proper equations.
+
+First you should feel, “haan sir, ye toh roz hota hai life mein”, then we convert that feel into physics language. That’s the base.`.trim(),
 
     "CORE CONCEPTS": `
-Break "${topic}" into 3–6 core ideas you must absolutely master for strong exam performance.
-Explain each idea in one short paragraph followed by a crisp, bullet-style takeaway.
-Highlight typical formulae, laws, theorems or relations that appear directly from these ideas.
-Show at least one simple numeric example for each core concept to ground the theory.
-Mention how these ideas combine in a standard problem based on "${topic}".`.trim(),
+Now let's pull the main pillars of "${topic}" one by one, like small building blocks.
 
-    "ADVANCED LEVEL": `
-Extend the discussion of "${topic}" towards concepts that are more advanced and multi-step.
-Introduce any special cases, limiting cases or edge-case behaviour that examiners love.
-Discuss how the same formula behaves differently when parameters approach 0, ∞ or negative values.
-Point out links with other high-level chapters (for example, graphs, calculus, modern physics, etc.).
-Summarise how an advanced problem typically mixes "${topic}" with 1–2 other chapters.`.trim(),
+1. **Core Idea 1 – What is actually changing?**
+   Always ask: in this chapter, **kaun si cheez change ho rahi hai?**  
+   Position? Speed? Energy? Force? Charge? Field?  
+   "${topic}" is mainly about how that quantity behaves when conditions around it change.
 
-    "EXTRA EDGE CONCEPTS": `
-Mention 3–5 not-so-obvious results or observations around "${topic}" that give a competitive edge.
-Include pattern observations, graphical interpretations or lesser-known shortcuts.
-Clarify any conceptual traps that students who only read basic material usually miss.
-If relevant, connect "${topic}" to experimental/real-life setups so that intuition becomes stronger.
-End with 1–2 one-line "pro" insights that are memorable and high-yield in exams.`.trim(),
+2. **Core Idea 2 – Cause and effect**
+   JEE/VITEEE physics is full cause–effect.  
+   Something changes (cause) → system reacts (effect).  
+   In "${topic}", figure out:
+   - kaun cause hai (which parameter we control),
+   - kaun effect hai (what responds in result).
 
-    "INTUITION": `
-Explain "${topic}" using pure intuition—imagine teaching it to a curious 9th-grade student.
-Use analogies (daily life, sports, driving, games) that map exactly to the formal concept.
-Describe what is increasing/decreasing, pushing/pulling, storing/releasing, etc., in this chapter.
-Use rough sketches or verbal imagery to show how quantities evolve step by step.
-Ensure the learner can visualise a typical question from "${topic}" without looking at formulas first.`.trim(),
+3. **Core Idea 3 – Graph feeling**
+   For any physics topic, if you can **see a graph in your mind**, you're already ahead of 80% students.  
+   Imagine one smooth curve that shows how the main quantity in "${topic}" grows, falls or stays constant.  
+   Even a rough mental graph gives huge intuition for MCQs and integer type questions.
 
-    "COMMON MISTAKES": `
-List the 5–8 most common mistakes students make while solving problems from "${topic}".
-Include sign errors, unit errors, wrong substitution, skipping conditions or domain restrictions.
-Highlight confusion with look-alike formulas or misreading of graphs/diagrams.
-For each mistake, add a quick "fix rule" or checklist that prevents it in the exam hall.
-End with a mini checklist that students can mentally run through before finalising their answer.`.trim(),
+4. **Core Idea 4 – Limiting and extreme cases**
+   Good JEE/VITEEE students always think:  
+   - agar value bahut chhoti ho jaye to kya hoga?  
+   - agar bahut badi ho jaye to kya hoga?  
+   "${topic}" bhi extreme cases mein bahut predictable ban jaata hai. That makes hard problems look easy.
 
-    "SHORTCUTS & TRICKS": `
-Present legal, concept-based shortcuts for problems involving "${topic}"—not rote hacks.
-Include any pattern-based elimination tricks useful for objective and subjective questions.
-Show when approximations (small angle, large distance, ideal conditions) are safe to apply.
-Give 2–3 worked shortcut examples, comparing the long vs. short method.
-Warn where shortcuts fail so that students do not overuse them blindly.`.trim(),
+Overall, "${topic}" is not random formula mugging. It’s a **story of one or two main physical quantities** and how they behave in different situations.`.trim(),
 
-    "IMPORTANT TOPICS": `
-Within "${topic}", mark the exact sub-topics that appear most frequently in past papers.
-Rank 3–7 areas as "Very High", "High" and "Moderate" weightage for typical exams.
-Mention any favorite question styles repeatedly used by exam setters from this chapter.
-Advise how much time to allocate to each sub-part during revision.
-Connect these with standard books or modules the student might be following (NCERT, coaching modules, etc.).`.trim(),
+    "FORMULAS": `
+Now formulas of "${topic}"—but **with feeling**, not dead memory.
 
-    "QUESTION PATTERNS": `
-Describe the classic question patterns built around "${topic}" (theory, numeric, graph-based, assertion–reason, short answer, integer type).
-For each pattern, specify the average difficulty and typical time required per question.
-Include at least one example structure like: "Given __, asked to find __ using __ relation."
-Show how examiners hide the core idea of "${topic}" inside seemingly different statements.
-End with an exam strategy on which patterns to attempt first and which to leave for the end.`.trim(),
+- Start with the **most fundamental relation** of this chapter.  
+  This is the one which almost every other formula can be derived from.  
+  In exam, even if you forget fancy shortcuts, this one relation can rebuild everything.
 
-    "PRACTICE QUESTIONS": `
-Create 5–8 practice questions on "${topic}" in increasing order of difficulty.
-Ensure there is a mix of basic, intermediate and advanced style questions.
-Tag each question with [Easy], [Medium] or [Advanced] and ideal time (in minutes).
-Focus on conceptual variety: direct formula, application, multi-step, graph, and mixed-chapter problems.
-(You may write questions in text-only form so that they can be quickly converted into formal PDFs later.)`.trim(),
+- Next, list **2–4 very standard formulas** that:
+  - directly appear in objective questions,
+  - or are used inside big derivations.
 
-    "FINAL FORMULA SUMMARY": `
-Write a compact formula sheet for "${topic}" suitable for last-day revision.
-Group formulas logically (by sub-topic or by variable).
-Specify units, conditions of validity and any important approximations next to each formula.
-Highlight 3–5 "must remember at any cost" relations with a star.
-Keep the language ultra-compact so it can fit into a single revision page or digital flashcard.`.trim()
+For each formula of "${topic}", you should know:
+- each symbol ka meaning (with units),
+- which direction sign is positive,
+- kis condition mein valid hai (ideal case? small angle? constant acceleration? etc.),
+- and ek chhota sa mental example where it obviously works.
+
+Golden rule:  
+If you cannot **explain a formula in your own Tanglish**, you don't fully own it yet. Read it, speak it out loud in simple words, then it becomes your weapon for JEE/VITEEE.`.trim(),
+
+    "EXAM LEVEL": `
+Ab thoda exam mode mein aa jaate hain for "${topic}".
+
+**Common exam tricks:**
+- Paper setter will rarely write the formula directly. They’ll **hide the concept** inside story language, graphs or mixed topics.
+- Many JEE/VITEEE questions on "${topic}" are just **unit checking + order of magnitude thinking**, not full derivation.
+- Often you can cancel big parts mentally and directly jump to ratio or proportionality.
+
+**Very common mistakes:**
+- Galat sign: plus/minus ghoom jata hai, especially when direction is opposite to your assumption.
+- Wrong units: mixing cm with m, gram with kg, or forgetting to convert.
+- Using a formula of "${topic}" **outside its valid condition** (for example assuming constant acceleration when it’s clearly not).
+- Ignoring given constraints in the question (like “smooth”, “light string”, “frictionless”, “equilibrium”).
+
+**JEE/VITEEE style tip:**
+Before solving, take 5 seconds and say in your head:
+> “Yeh question actually kis base idea se aa raha hai from "${topic}"?”
+
+Once you name the idea, 70% work done. Calculation is just clean finishing.`.trim(),
+
+    "FINAL SUMMARY": `
+Chalo "${topic}" ko ek short revision snapshot mein pack karte hain:
+
+- **Feel first, formula later** – Pehle real-life scene imagine karo, phir equation likho.
+- **One main quantity** – Har chapter ek do important physical quantity ke around ghoomta hai; woh identify karo.
+- **Graph + limit thinking** – How does that quantity behave on a graph? Extreme cases mein kya hota hai?
+- **Formula with meaning** – Har symbol ka clear picture rakho. Units + direction + valid conditions.
+- **Exam lens** – JEE/VITEEE mein direct formula se zyada, concept disguise important hai. Story ko tod ke base idea tak aao.
+- **Error checklist** – sign, units, conditions, and final answer ka order of magnitude always re-check.
+
+If you revise "${topic}" using this 5‑step template, you’ll naturally start thinking like a smart physics solver, not a formula‑mugging student.`.trim()
   };
 }
 
 // Simple tags per section for card footer
 const SECTION_TAG_HINTS = {
-  "FOUNDATION (Basics)": ["Basics", "Definitions"],
-  "CORE CONCEPTS": ["High yield", "Theory + examples"],
-  "ADVANCED LEVEL": ["Challenging", "Edge cases"],
-  "EXTRA EDGE CONCEPTS": ["Pro tips", "Non-obvious"],
-  "INTUITION": ["Visual", "Real life"],
-  "COMMON MISTAKES": ["Exam traps", "Error log"],
-  "SHORTCUTS & TRICKS": ["Speed", "Smart solving"],
-  "IMPORTANT TOPICS": ["Priority", "Weightage"],
-  "QUESTION PATTERNS": ["Question styles", "Strategy"],
-  "PRACTICE QUESTIONS": ["Drill", "Mixed level"],
-  "FINAL FORMULA SUMMARY": ["Revision", "Formula sheet"]
+  "FOUNDATION (Basics)": ["Tanglish basics", "Real life"],
+  "CORE CONCEPTS": ["Intuition", "Pillars"],
+  "FORMULAS": ["Meaning", "Units"],
+  "EXAM LEVEL": ["JEE/VITEEE", "Tricks"],
+  "FINAL SUMMARY": ["Revision", "Quick recall"]
 };
 
 // ------- DOM references -------
