@@ -1,92 +1,136 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>EXAPREP – JEE/VITEEE Tutor</title>
+  <title>EXAPREP AI – Advanced Topic Tutor</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
 </head>
 <body>
-  <header class="header">
-    <div class="logo">EXAPREP</div>
-    <div class="tagline">Your personal JEE / VITEEE expert tutor</div>
+  <div class="background-gradient"></div>
+
+  <header class="app-header">
+    <div class="brand">
+      <div class="brand-logo">EX</div>
+      <div class="brand-text">
+        <h1>EXAPREP AI</h1>
+        <p>Next-gen Exam Prep AI Tutor</p>
+      </div>
+    </div>
+
+    <div class="header-actions">
+      <button class="icon-button" id="scrollToOutputBtn" title="Jump to explanation">
+        <span class="icon">⤵</span>
+      </button>
+      <label class="theme-toggle">
+        <input type="checkbox" id="themeToggle" checked />
+        <span class="toggle-track">
+          <span class="toggle-thumb"></span>
+        </span>
+        <span class="theme-label">
+          <span class="moon">🌙</span>
+          <span class="sun">☀️</span>
+        </span>
+      </label>
+    </div>
   </header>
 
-  <main class="main">
-    <section class="input-section card">
-      <h2>Ask EXAPREP any topic</h2>
-      <p class="hint">
-        Example: <em>“Physics – Work, Energy and Power”</em> or
-        <em>“Maths – Quadratic Equations”</em>
-      </p>
-      <label class="field-label" for="subject">Subject</label>
-      <select id="subject">
-        <option value="">Select subject</option>
-        <option>Physics</option>
-        <option>Chemistry</option>
-        <option>Maths</option>
-        <option>Biology</option>
-        <option>Other</option>
-      </select>
-
-      <label class="field-label" for="topic">Topic</label>
-      <input
-        id="topic"
-        type="text"
-        placeholder="e.g. Kinematics in 1D, Chemical Bonding, Complex Numbers"
-      />
-
-      <button id="generateBtn">Explain Topic</button>
-
-      <div class="small-text">
-        EXAPREP will:
-        <ul>
-          <li>Start from zero level, then go advanced</li>
-          <li>Cover concepts, tricks, mistakes, and PYQ patterns</li>
-          <li>Give formula summary and practice questions</li>
-        </ul>
+  <main class="app-main">
+    <!-- Input panel -->
+    <section class="input-panel glass-card">
+      <div class="input-header">
+        <h2>Master Any Topic in Seconds</h2>
+        <p>Enter a topic from Physics, Chemistry, Mathematics or any conceptual subject.</p>
       </div>
+
+      <form id="topicForm" class="topic-form">
+        <div class="input-group">
+          <label for="topicInput">Topic</label>
+          <div class="input-wrapper">
+            <input
+              type="text"
+              id="topicInput"
+              name="topic"
+              placeholder="Enter your topic (e.g., Laws of Motion)"
+              autocomplete="off"
+            />
+            <button type="button" id="clearInputBtn" class="icon-button clear-btn" title="Clear">
+              ✕
+            </button>
+          </div>
+        </div>
+
+        <div class="form-footer">
+          <div class="hint">
+            <span class="pill">Conceptual Clarity</span>
+            <span class="pill">Exam Strategy</span>
+            <span class="pill">Practice Focus</span>
+          </div>
+
+          <button type="submit" class="primary-btn" id="generateBtn">
+            <span class="btn-text">Generate Full Explanation</span>
+            <span class="btn-spinner" aria-hidden="true"></span>
+          </button>
+        </div>
+      </form>
     </section>
 
-    <section class="content-layout">
-      <section class="output-section card">
-        <div class="output-header">
-          <h2>Explanation</h2>
-          <button id="saveTopicBtn" class="secondary-btn" disabled>Save Topic</button>
+    <!-- Output & navigation -->
+    <section class="output-layout" id="outputSection">
+      <aside class="section-nav glass-card">
+        <div class="section-nav-header">
+          <h3>Sections</h3>
+          <button id="copyAllBtn" class="secondary-btn small">
+            Copy All Notes
+          </button>
         </div>
-        <div id="loading" class="loading hidden">Thinking like an expert tutor…</div>
-        <article id="output" class="output-content">
-          <p class="placeholder">
-            Enter a subject and topic, then click <strong>Explain Topic</strong> to see a
-            complete EXAPREP-style explanation here.
-          </p>
-        </article>
-      </section>
-
-      <aside class="sidebar card">
-        <h3>Saved Topics (CRUD)</h3>
-        <p class="small-text">
-          Manage your topics here:
-          <strong>C</strong>reate (save), <strong>R</strong>ead (view),
-          <strong>U</strong>pdate, <strong>D</strong>elete.
-        </p>
-        <ul id="savedList" class="saved-list"></ul>
-        <div id="noSaved" class="small-text muted">
-          No topics saved yet. Generate an explanation and click “Save Topic”.
-        </div>
+        <nav>
+          <ul id="sectionNavList">
+            <!-- Populated by JS -->
+          </ul>
+        </nav>
       </aside>
+
+      <section class="output-panel glass-card">
+        <div class="output-header">
+          <div>
+            <h2>Smart Explanation</h2>
+            <p id="currentTopicLabel">Waiting for a topic...</p>
+          </div>
+          <div class="output-meta">
+            <span class="badge badge-live">AI-Simulated</span>
+            <span class="badge">Exam Focused</span>
+          </div>
+        </div>
+
+        <div class="output-status" id="outputStatus">
+          <p>Enter a topic above and get a structured, full-mark oriented explanation.</p>
+        </div>
+
+        <div class="loader" id="loader" aria-hidden="true">
+          <div class="spinner"></div>
+          <p>Analyzing topic, building exam-ready notes...</p>
+        </div>
+
+        <div class="cards-grid" id="cardsGrid">
+          <!-- Section cards injected here -->
+        </div>
+      </section>
     </section>
   </main>
 
-  <footer class="footer">
-    <span>EXAPREP · Designed for JEE / VITEEE preparation</span>
-    <span class="footer-note">
-      Note: To connect this UI to a real AI model (like OpenAI), wire the
-      <code>generateExplanation()</code> function in <code>app.js</code> to your backend/API.
-    </span>
+  <footer class="app-footer">
+    <p>
+      Built for focused exam prep • EXAPREP AI – Simulated tutor. Connect real AI later via API.
+    </p>
   </footer>
 
-  <script src="app.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
-
