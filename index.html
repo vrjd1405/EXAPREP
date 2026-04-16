@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EXAPREP – JEE/VITEEE Tutor</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="logo">EXAPREP</div>
+    <div class="tagline">Your personal JEE / VITEEE expert tutor</div>
+  </header>
+
+  <main class="main">
+    <section class="input-section card">
+      <h2>Ask EXAPREP any topic</h2>
+      <p class="hint">
+        Example: <em>“Physics – Work, Energy and Power”</em> or
+        <em>“Maths – Quadratic Equations”</em>
+      </p>
+      <label class="field-label" for="subject">Subject</label>
+      <select id="subject">
+        <option value="">Select subject</option>
+        <option>Physics</option>
+        <option>Chemistry</option>
+        <option>Maths</option>
+        <option>Biology</option>
+        <option>Other</option>
+      </select>
+
+      <label class="field-label" for="topic">Topic</label>
+      <input
+        id="topic"
+        type="text"
+        placeholder="e.g. Kinematics in 1D, Chemical Bonding, Complex Numbers"
+      />
+
+      <button id="generateBtn">Explain Topic</button>
+
+      <div class="small-text">
+        EXAPREP will:
+        <ul>
+          <li>Start from zero level, then go advanced</li>
+          <li>Cover concepts, tricks, mistakes, and PYQ patterns</li>
+          <li>Give formula summary and practice questions</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="content-layout">
+      <section class="output-section card">
+        <div class="output-header">
+          <h2>Explanation</h2>
+          <button id="saveTopicBtn" class="secondary-btn" disabled>Save Topic</button>
+        </div>
+        <div id="loading" class="loading hidden">Thinking like an expert tutor…</div>
+        <article id="output" class="output-content">
+          <p class="placeholder">
+            Enter a subject and topic, then click <strong>Explain Topic</strong> to see a
+            complete EXAPREP-style explanation here.
+          </p>
+        </article>
+      </section>
+
+      <aside class="sidebar card">
+        <h3>Saved Topics (CRUD)</h3>
+        <p class="small-text">
+          Manage your topics here:
+          <strong>C</strong>reate (save), <strong>R</strong>ead (view),
+          <strong>U</strong>pdate, <strong>D</strong>elete.
+        </p>
+        <ul id="savedList" class="saved-list"></ul>
+        <div id="noSaved" class="small-text muted">
+          No topics saved yet. Generate an explanation and click “Save Topic”.
+        </div>
+      </aside>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>EXAPREP · Designed for JEE / VITEEE preparation</span>
+    <span class="footer-note">
+      Note: To connect this UI to a real AI model (like OpenAI), wire the
+      <code>generateExplanation()</code> function in <code>app.js</code> to your backend/API.
+    </span>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
+
