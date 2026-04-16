@@ -9,115 +9,95 @@ const SECTION_ORDER = [
   "FINAL SUMMARY"
 ];
 
-// Simulated AI template following your teaching style.
+// Simulated AI template: short, clear English only.
 // Later you can replace `buildSimulatedResponse` with a real API call.
 function buildSimulatedResponse(topicRaw) {
   const topic = topicRaw.trim() || "Selected Topic";
 
   return {
     "FOUNDATION (Basics)": `
-Okay, let's start super basic for "${topic}".
+Let us first understand what "${topic}" actually is.
 
-In simple words, this concept tells you **how physics is actually happening in real life**, but in a proper math + logic language. Imagine I'm your favourite physics sir in class, explaining on the board—same vibe here.
+This topic is a clean way to describe a real physical situation using simple ideas and maths.  
+Ask yourself: *Where do I see this in daily life?*  
+For example, if "${topic}" is about motion, think of a car starting, stopping, or turning and how your body reacts.
 
-Think of one daily life scene where "${topic}" comes naturally. For example, if "${topic}" is related to motion, imagine:
-- You sitting in a car,
-- Speeding up, slowing down, or turning,
-- How you feel a push or pull even though you are just sitting.
+Key basic points:
+- What quantity is changing? (position, speed, energy, force, charge, field, etc.)
+- What are the standard units and symbols we use?
+- Which earlier chapters connect to it (like kinematics, vectors, or basic math)?
 
-In the same way, "${topic}" is just a **clean way of describing what you already experience daily**, but with:
-- proper words,
-- proper units,
-- proper equations.
-
-First you should feel, “haan sir, ye toh roz hota hai life mein”, then we convert that feel into physics language. That’s the base.`.trim(),
+Once you can point to a real-life scene and say “this is ${topic} in action”, your foundation is ready.`.trim(),
 
     "CORE CONCEPTS": `
-Now let's pull the main pillars of "${topic}" one by one, like small building blocks.
+Now focus on the main ideas that drive "${topic}".
 
-1. **Core Idea 1 – What is actually changing?**
-   Always ask: in this chapter, **kaun si cheez change ho rahi hai?**  
-   Position? Speed? Energy? Force? Charge? Field?  
-   "${topic}" is mainly about how that quantity behaves when conditions around it change.
+1. **What is changing?**  
+   Identify the primary physical quantity for this chapter (for example: velocity in motion, force in dynamics, charge in electrostatics). "${topic}" mainly tracks how this quantity behaves.
 
-2. **Core Idea 2 – Cause and effect**
-   JEE/VITEEE physics is full cause–effect.  
-   Something changes (cause) → system reacts (effect).  
-   In "${topic}", figure out:
-   - kaun cause hai (which parameter we control),
-   - kaun effect hai (what responds in result).
+2. **Cause and effect**  
+   In every question, ask: *What is the cause and what is the effect?*  
+   When one quantity changes (cause), something else responds (effect). "${topic}" gives the rule connecting them.
 
-3. **Core Idea 3 – Graph feeling**
-   For any physics topic, if you can **see a graph in your mind**, you're already ahead of 80% students.  
-   Imagine one smooth curve that shows how the main quantity in "${topic}" grows, falls or stays constant.  
-   Even a rough mental graph gives huge intuition for MCQs and integer type questions.
+3. **Graph intuition**  
+   Try to imagine at least one simple graph for "${topic}" (for example, quantity vs. time or quantity vs. position). Even a rough mental graph helps you predict increasing, decreasing, or constant behaviour.
 
-4. **Core Idea 4 – Limiting and extreme cases**
-   Good JEE/VITEEE students always think:  
-   - agar value bahut chhoti ho jaye to kya hoga?  
-   - agar bahut badi ho jaye to kya hoga?  
-   "${topic}" bhi extreme cases mein bahut predictable ban jaata hai. That makes hard problems look easy.
+4. **Extreme cases**  
+   Check what happens when a variable becomes very small, very large, or zero. Hard questions often become easy when you understand these limiting cases.
 
-Overall, "${topic}" is not random formula mugging. It’s a **story of one or two main physical quantities** and how they behave in different situations.`.trim(),
+So, "${topic}" is really a story about how one or two key quantities react when conditions change.`.trim(),
 
     "FORMULAS": `
-Now formulas of "${topic}"—but **with feeling**, not dead memory.
+Formulas of "${topic}" are just short-hand versions of the ideas above.
 
-- Start with the **most fundamental relation** of this chapter.  
-  This is the one which almost every other formula can be derived from.  
-  In exam, even if you forget fancy shortcuts, this one relation can rebuild everything.
+- First, there is usually **one main relation** that defines the chapter.  
+  From this, most other results can be derived.
 
-- Next, list **2–4 very standard formulas** that:
-  - directly appear in objective questions,
-  - or are used inside big derivations.
+- Then you have **a small set of standard formulas** that appear repeatedly in questions.
 
-For each formula of "${topic}", you should know:
-- each symbol ka meaning (with units),
-- which direction sign is positive,
-- kis condition mein valid hai (ideal case? small angle? constant acceleration? etc.),
-- and ek chhota sa mental example where it obviously works.
+For each important formula in "${topic}":
+- Know what every symbol means and its unit.
+- Know in which direction sign is taken positive.
+- Know under which conditions it is valid (for example, constant acceleration, ideal conditions, small angle, etc.).
 
-Golden rule:  
-If you cannot **explain a formula in your own Tanglish**, you don't fully own it yet. Read it, speak it out loud in simple words, then it becomes your weapon for JEE/VITEEE.`.trim(),
+If you can look at a formula and say in plain English, “This means when ___ changes, ___ responds like this…”, then that formula is truly clear.`.trim(),
 
     "EXAM LEVEL": `
-Ab thoda exam mode mein aa jaate hain for "${topic}".
+Now think like a JEE/VITEEE examiner who wants to test "${topic}" smartly.
 
-**Common exam tricks:**
-- Paper setter will rarely write the formula directly. They’ll **hide the concept** inside story language, graphs or mixed topics.
-- Many JEE/VITEEE questions on "${topic}" are just **unit checking + order of magnitude thinking**, not full derivation.
-- Often you can cancel big parts mentally and directly jump to ratio or proportionality.
+**Typical tricks:**
+- The question rarely writes the formula directly; the concept is hidden inside a story, a graph, or a combo of topics.
+- Many problems can be cracked by thinking in **ratios, proportionality, and units**, not full long calculations.
+- Sometimes a rough estimate or limiting-case check is enough to eliminate wrong options.
 
-**Very common mistakes:**
-- Galat sign: plus/minus ghoom jata hai, especially when direction is opposite to your assumption.
-- Wrong units: mixing cm with m, gram with kg, or forgetting to convert.
-- Using a formula of "${topic}" **outside its valid condition** (for example assuming constant acceleration when it’s clearly not).
-- Ignoring given constraints in the question (like “smooth”, “light string”, “frictionless”, “equilibrium”).
+**Common mistakes:**
+- Sign error (wrong plus/minus when direction is opposite to your assumption).
+- Unit error (mixing cm with m, g with kg, or forgetting conversion).
+- Applying a formula for "${topic}" outside its valid range of conditions.
+- Ignoring keywords like “smooth”, “equilibrium”, “light string”, “frictionless”, which simplify the physics.
 
-**JEE/VITEEE style tip:**
-Before solving, take 5 seconds and say in your head:
-> “Yeh question actually kis base idea se aa raha hai from "${topic}"?”
-
-Once you name the idea, 70% work done. Calculation is just clean finishing.`.trim(),
+Before solving, pause for 3–5 seconds and ask:  
+“Which core idea of \\"${topic}\\" is this question really using?”  
+Once you see the idea, the rest is mostly clean execution.`.trim(),
 
     "FINAL SUMMARY": `
-Chalo "${topic}" ko ek short revision snapshot mein pack karte hain:
+Final quick revision for "${topic}":
 
-- **Feel first, formula later** – Pehle real-life scene imagine karo, phir equation likho.
-- **One main quantity** – Har chapter ek do important physical quantity ke around ghoomta hai; woh identify karo.
-- **Graph + limit thinking** – How does that quantity behave on a graph? Extreme cases mein kya hota hai?
-- **Formula with meaning** – Har symbol ka clear picture rakho. Units + direction + valid conditions.
-- **Exam lens** – JEE/VITEEE mein direct formula se zyada, concept disguise important hai. Story ko tod ke base idea tak aao.
-- **Error checklist** – sign, units, conditions, and final answer ka order of magnitude always re-check.
+- Start from **real-life feel**, then connect to the physics idea.
+- Identify the **one or two main quantities** that the whole topic talks about.
+- Use **graphs and extreme cases** to build strong intuition.
+- Learn each key **formula with full meaning**: symbols, units, direction, and validity.
+- In exam mode, first spot the **underlying idea**, then do neat, low-error calculations.
+- Always run a quick check for sign, units, and rough size of the final answer.
 
-If you revise "${topic}" using this 5‑step template, you’ll naturally start thinking like a smart physics solver, not a formula‑mugging student.`.trim()
+Using this template, any topic like "${topic}" becomes easier to remember, reason about, and apply in JEE/VITEEE problems.`.trim()
   };
 }
 
 // Simple tags per section for card footer
 const SECTION_TAG_HINTS = {
-  "FOUNDATION (Basics)": ["Tanglish basics", "Real life"],
-  "CORE CONCEPTS": ["Intuition", "Pillars"],
+  "FOUNDATION (Basics)": ["Basics", "Real life"],
+  "CORE CONCEPTS": ["Intuition", "Key ideas"],
   "FORMULAS": ["Meaning", "Units"],
   "EXAM LEVEL": ["JEE/VITEEE", "Tricks"],
   "FINAL SUMMARY": ["Revision", "Quick recall"]
